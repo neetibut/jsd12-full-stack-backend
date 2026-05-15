@@ -48,4 +48,9 @@ router.put("/:id", (req, res) => {
   res.status(200).json(user);
 });
 
-// router.delete();
+router.delete("/:id", (req, res) => {
+  const index = users.findIndex((u) => u.id === req.params.id);
+  if (index === -1) return res.status(404).json({ error: "User not found" });
+  const [deleted] = users.splice(index, 1);
+  res.json(deleted);
+});

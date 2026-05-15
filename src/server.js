@@ -10,6 +10,8 @@ app.use(cors());
 
 app.use(express.json());
 
+app.use("/api", apiRoutes);
+
 app.get("/", (req, res) => {
   res.send(`<!doctype html>
   <html lang="en">
@@ -42,8 +44,6 @@ app.get("/", (req, res) => {
     </body>
   </html>`);
 });
-
-app.use("/api", apiRoutes);
 
 const PORT = 3002;
 
