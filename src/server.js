@@ -3,6 +3,7 @@ import cors from "cors";
 
 import { users } from "./fakeData/fakeUsers.js";
 import { router as apiRoutes } from "./routes/index.js";
+import { connectDB } from "./config/mongodb.js";
 
 const app = express();
 
@@ -46,6 +47,8 @@ app.get("/", (req, res) => {
 });
 
 const PORT = 3002;
+
+await connectDB();
 
 app.listen(PORT, () => {
   console.log(`Server running on PORT: ${PORT} 🟢`);
