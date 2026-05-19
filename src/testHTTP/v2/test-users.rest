@@ -8,19 +8,19 @@ Content-Type: application/json
 {
     "username": "Charlie", 
     "role": "admin",
-    "email": "charlie2@example.com",
+    "email": "charlie6@example.com",
     "password": "password123"
 }
 
 ### Update a user
-PUT http://localhost:3002/api/v2/users/1
+PUT http://localhost:3002/api/v2/users/6a06ad3401facfee7966fc0f
 Content-Type: application/json
 
 {
     "username": "Neeti3", 
-    "email": "neeti@example.com",
-    "password": "pass123"
+    "email": "charlie@example.com",
+    "password": "password123"
 }
 
 ### DELETE a user
-DELETE http://localhost:3002/api/v2/users/1
+DELETE http://localhost:3002/api/v2/users/6a06ad3401facfee7966fc0f
