@@ -31,4 +31,4 @@ Content-Type: application/json
 }
 
 ### DELETE a user
-DELETE http://localhost:3002/api/v2/users/6a06ad3401facfee7966fc0f
+DELETE http://localhost:3002/api/v2/users/6a0be401c1cee9892f7772f6

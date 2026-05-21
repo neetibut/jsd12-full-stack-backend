@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import cookieParser from "cookie-parser";
 
 import { users } from "./fakeData/fakeUsers.js";
 import { router as apiRoutes } from "./routes/index.js";
@@ -8,9 +9,19 @@ import { connectSupabase } from "./config/supabase.js";
 
 const app = express();
 
-app.use(cors());
+const corsOptions = {
+  origin: [
+    "http://localhost:5173",
+    "http://localhost:5174",
+    "http://localhost:5175",
+  ], // frontend domain
+  credentials: true, // ✅ allow cookies to be sent
+};
+
+app.use(cors(corsOptions));
 
 app.use(express.json());
+app.use(cookieParser());
 
 app.use("/api", apiRoutes);
 
