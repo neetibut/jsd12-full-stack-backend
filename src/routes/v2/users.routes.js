@@ -19,7 +19,7 @@ export const router = Router();
 // Read all users
 router.get("/", getUsers);
 
-// Create a user
+// Create a user + vector embedding
 router.post("/", createUser);
 
 // Update a user

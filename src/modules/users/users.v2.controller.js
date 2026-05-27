@@ -22,7 +22,7 @@ export const getUsers = async (req, res, next) => {
 };
 
 export const createUser = async (req, res, next) => {
- const { username, email, password, role } = req.body || {};
+  const { username, email, password, role } = req.body || {};
 
   const trimmedUsername = String(username || "").trim();
   const trimmedEmail = String(email || "")
@@ -130,7 +130,7 @@ export const deleteUser = async (req, res, next) => {
   }
 };
 
-// POST ask about users (Phase 5: Atlas Vector Search retrieval + Gemini generation)
+// POST ask about users (Phase 6: Atlas Vector Search retrieval + Gemini generation)
 export const askUsers = async (req, res, next) => {
   const { question, topK } = req.body || {};
   const trimmed = String(question || "").trim();
